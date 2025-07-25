@@ -9,10 +9,12 @@ import { AuthGuard } from './auth/auth.guard';
 import { EmployeeDashboardComponent } from './pages/employee/employee-dashboard/employee-dashboard.component';
 import { EmployeeLayoutComponent } from './layouts/employee-layout/employee-layout.component';
 import { OneTimeAuthGuard } from './auth/oneTimeOpening.guard';
+import { AlreadyAuthGuard } from './auth/already-auth.guard';
+import { EmployeeManegingComponent } from './pages/employee/employee-maneging/employee-maneging.component';
 
 const routes: Routes = [
   // {path:"", redirectTo: 'Sign-in', pathMatch: 'full' },
-  {path:"Sign-in",component:LoginComponent},
+  {path: 'Sign-in',component: LoginComponent,canActivate: [AlreadyAuthGuard]},
   {path:"Sign-up",component:SignUpComponent},
 
    {
@@ -34,6 +36,8 @@ const routes: Routes = [
     children: [
       {path:"", redirectTo: 'EmployeeDashboard', pathMatch: 'full' },
       {path:"EmployeeDashboard",component:EmployeeDashboardComponent},
+      {path:"EmployeeManege",component:EmployeeManegingComponent},
+
     
     ]
   },

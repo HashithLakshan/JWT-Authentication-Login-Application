@@ -16,6 +16,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { EmployeeLayoutComponent } from './layouts/employee-layout/employee-layout.component';
 import { EmployeeSideNavComponent } from './components/employee-side-nav/employee-side-nav.component';
 import { AdminSideNavComponent } from './components/admin-side-nav/admin-side-nav.component';
+import { EmployeeManegingComponent } from './pages/employee/employee-maneging/employee-maneging.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AdminSideNavComponent } from './components/admin-side-nav/admin-side-na
     AdminLayoutComponent,
     EmployeeLayoutComponent,
     EmployeeSideNavComponent,
-    AdminSideNavComponent
+    AdminSideNavComponent,
+    EmployeeManegingComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { AdminSideNavComponent } from './components/admin-side-nav/admin-side-na
     HttpClientModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+   
   ],
   providers: [
     {

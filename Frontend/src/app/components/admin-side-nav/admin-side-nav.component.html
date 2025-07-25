@@ -1,13 +1,30 @@
-<nav class="bg-gray-800 p-4 flex justify-between items-center">
-  <div class="text-white text-xl font-bold">
-    Admin Panel
-  </div>
-  <div class="flex space-x-4">
-    <a routerLink="/dashboard" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-      Dashboard
+<div class="flex min-h-screen bg-gray-100">
+  <!-- Side Navigation -->
+  <nav class="w-64 bg-white shadow-lg rounded-r-xl p-6 flex flex-col gap-4">
+    <a
+      routerLink="/Admin/AdminDashboard"
+      routerLinkActive="bg-blue-100 text-blue-700"
+      class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 transition font-medium"
+    >
+      <span class="material-icons text-blue-600">Dashboard</span>
+      
     </a>
-    <a routerLink="/settings" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-      Settings
-    </a>
+  <a
+  routerLink="/Employee/EmployeeManege"
+  routerLinkActive="bg-blue-100 text-blue-700"
+  class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 transition font-medium"
+>
+  <span class="material-icons text-blue-600"> Users</span>
+</a>
+    <div class="flex-1"></div>
+    <button
+      class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-red-50 transition font-medium"
+  (click)="logout()"  >
+      <span class="material-icons text-red-600">logout</span>
+    </button>
+  </nav>
+  <!-- Main Content Area -->
+  <div class="flex-1 p-10">
+    <router-outlet></router-outlet>
   </div>
-</nav>
+</div>

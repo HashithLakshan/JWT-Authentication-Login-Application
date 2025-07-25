@@ -26,12 +26,11 @@ export class OneTimeAuthGuard implements CanActivate {
     // Time-based access for others (e.g., 9 AM to 5 PM)
     
 
-    if (this.authService.isHaveAdmin("ADMIN")) { // Assuming isTokenValid checks if the token is valid
+    if (this.authService.isHaveAdmin("ADMIN")) { 
       return true;
     }
 
     // Deny and redirect
-    alert('This page is accessible only between 9AM and 5PM');
     this.router.navigate(['/not-allowed']); // or wherever you want
     return false;
   }
